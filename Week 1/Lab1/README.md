@@ -23,7 +23,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
 
 https://docs.aws.amazon.com/cli/latest/userguide/cli-services-s3-commands.html
 
-## Learning Experience from working wiith the labs
+# Learning Experience from working wiith LAB 1
 
 ### 1. Launch AWS Cloud shell
 to do this the first thing to do is to log in to the aws management console an then access the AWS Cloudshell to begin writng the codes
