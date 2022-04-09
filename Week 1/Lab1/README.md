@@ -102,3 +102,6 @@ To delete a bucket, all that nneds tp be done is to use the aws s3 rb command
     Note: before i ran the rb command, i did a listing command to list all the buckets i had in my default region and my bucket was listed among them but after i ram the rb command i ran the list command once again and my bucket was mnot among those listed. this shows tat the bucket has been succesfully deleted.
 
 ![](https://imgur.com/gpZf2wF.jpg) *Deleteing the s3 bucket archlanretest*
+
+
+
