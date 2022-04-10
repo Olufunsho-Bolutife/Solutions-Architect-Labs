@@ -4,7 +4,7 @@ Amazon S3 can be used to host simple static websites and we'll do a walk through
 
 Below is the link to a site I hosted written in htmml, CSS and Java script
 
-http://cyber-tech-web-hosting.s3-website-us-east-1.amazonaws.com
+http://starlite-fitness.s3-website-us-east-1.amazonaws.com/?
 
 First, you need to create a bucket, we have gone through how to create a bucket in the previous lab so we'll skip that 
 
@@ -30,4 +30,4 @@ Lastly, Go to the properties page and scroll down to static web hosting and copy
 ![Imgur](https://imgur.com/Tq4m9yW.jpg)
 
     
-![Imgur](https://imgur.com/bKmc9hJ.jpg)
+![Imgur](https://imgur.com/uhKg43V.jpg)

@@ -22,3 +22,13 @@ https://docs.aws.amazon.com/cli/latest/reference/ec2/
 
 https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html
 
+# Notes from Experimenting with this Lab Tasks
+
+## 1. Launch the AWS Management Console
+Open your browser and navigate to AWS console home. At the top left corner enter keyword "VPC" in the search box and enter into the AWS VPC console
+## 2. Launch a VPC with one public and one private subnets.
+## 3. Create two route table and associate  each one to each subnets
+## 4. Attach an internet gateway to the VPC and a NAT gateway to the private subnet.
+## 5. Lauch a Linux instance into this VPC and attach the subnet
+## 6. Test the network connectivity
+## 7. Perform clean up actions
