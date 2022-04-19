@@ -34,7 +34,7 @@ create new acces keys and download the csv file because you only get shot to acc
 ![Imgur](https://imgur.com/AzJXAyN.jpg)
 
 ## 2. Lauch a VPC 
-In the previus lab we explicitly descibed how to launch a non default VPC using the management console but now, we want to take the CLI route.
+In the previous labs we explicitly descibed how to launch a non default VPC using the management console but now, we want to take the CLI route.
 
 To launch a non default vpc using aws cli you will run the command below
 
@@ -43,10 +43,10 @@ To launch a non default vpc using aws cli you will run the command below
 
 ![Imgur](https://imgur.com/eYRjJpl.jpg)
 
-Make sure you take note of all the information being given in the JSON responses. The JSON contains important information like the ID of our components which we will be referencing as we move on
+Make sure you take note of all the information being given in the JSON responses. The JSON contains important information like the ID of our VPC components which we will be referencing as we move on
 
 ## 3. Create two subnets (a public and a private subnet)
-You need to create two subnet, one in which you will launch your public resources and te other in which you will launch your private resources.
+You need to create two subnets, one in which you will launch your public resources and the other in which you will launch your private resources.
 
 To create the public subnet, run the command below
     
@@ -58,10 +58,10 @@ To create the public subnet, run the command below
 
 Take note of the JSON response you will need the information from it
 
-By default, the subnet we create are private i.e resources launched into them will not recieve a public Ip address and therefore no means of communication with the public. For this reason we will run a command to enable resources launcehd into this subnet to recive public IPv$ addresses enabling them to communicate with the public. This step will be shown in step 4
+By default, the subnets we create are private i.e resources launched into them will not recieve a public Ip address and therefore no means of communication with the public. For this reason we will run a command to enable resources launcehd into this subnet to receive public IPv4 addresses enabling them to communicate with the public. This command  will be shown in step 4
 
 
-To create our private subnet we follow the same step as we did to create the public and we will leave the subnet as it is not enabling it to mapp out public IPv4 addresses to resoures launched in it
+To create our private subnet we follow the same step as we did to create the public and we will leave the subnet as it is not enabling it to map out public IPv4 addresses to resoures launched in it
 
     aws ec2 create-subnet \
     --vpc-id vpc-05c375ae9942ef1b0 \
