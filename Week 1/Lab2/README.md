@@ -178,3 +178,6 @@ to delete the Bucket policy, head down to the permision tab and scroll back to b
 To delete the bucket, go back to your bucket console, select the bucket, and click on delete.
 
 ![Imgur](https://imgur.com/k9UI3v3.jpg)
+
+
+THANK YOU FOR FOLLOWING.

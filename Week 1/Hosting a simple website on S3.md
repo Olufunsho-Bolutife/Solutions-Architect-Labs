@@ -31,3 +31,9 @@ Lastly, Go to the properties page and scroll down to static web hosting and copy
 
     
 ![Imgur](https://imgur.com/uhKg43V.jpg)
+
+
+
+
+
+THANK YOU FOR FOLLOWING.

@@ -103,7 +103,7 @@ To delete a bucket, all that nneds tp be done is to use the aws s3 rb command
 
 ![](https://imgur.com/gpZf2wF.jpg) *Deleteing the s3 bucket archlanretest*
 
-Thank you for following 
+THANK YOU FOR FOLLOWING. 
 
 
 

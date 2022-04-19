@@ -276,3 +276,11 @@ The Last thing to do is to perfform cleanup operations so thatt we wont be charg
         * Delete the route tables
         * Delete the Subnets
         * Delete The VPC
+
+
+
+
+
+
+
+THANK YOU FOR FOLLOWING.
