@@ -16,7 +16,10 @@ https://docs.aws.amazon.com/vpc/index.html
 
 # Notes from the lab work
 
-## 1. Open your CLI and run a configuration setting
+----------
+
+
+> ## Open your CLI and run a configuration setting
 
 You need to run an "aws configure" command so that your local terminal can cmmunicate with your aws account in the aws console.
 
@@ -33,7 +36,7 @@ create new acces keys and download the csv file because you only get shot to acc
 
 ![Imgur](https://imgur.com/AzJXAyN.jpg)
 
-## 2. Lauch a VPC 
+> ## Lauch a VPC 
 In the previous labs we explicitly descibed how to launch a non default VPC using the management console but now, we want to take the CLI route.
 
 To launch a non default vpc using aws cli you will run the command below
@@ -45,7 +48,7 @@ To launch a non default vpc using aws cli you will run the command below
 
 Make sure you take note of all the information being given in the JSON responses. The JSON contains important information like the ID of our VPC components which we will be referencing as we move on
 
-## 3. Create two subnets (a public and a private subnet)
+> ## Create two subnets (a public and a private subnet)
 You need to create two subnets, one in which you will launch your public resources and the other in which you will launch your private resources.
 
 To create the public subnet, run the command below
@@ -72,7 +75,7 @@ Kindly, note that the CIDRs must not overlap
 ![Imgur](https://imgur.com/RioVELm.jpg)
 
 
-## 4. Make your subnet public by creating and attaching an internet gateway
+>## Make your subnet public by creating and attaching an internet gateway
 The next thing we will do to define our subnet as a public subnet is to run a command that will make all resources launched into this subnet receive a public IP address, This is the procedure we will skip while creating the new subnet because we don't want any resouce launched into it receive a public IP, Hence the name "Private Subnet"
 
     aws ec2 modify-subnet-attribute \
@@ -132,7 +135,7 @@ This command below creates a route for our newly created  route table. The route
 ![Imgur](https://imgur.com/4PQnIRM.jpg)
 
 
-## 5. Create a security group and add a SSH access from anywhere
+> ## Create a security group and add a SSH access from anywhere
 
 A security group is a firewall that operates on the instance level. A security group determines which traffic are allowed and not allowed into ourinstances. 
 
@@ -165,7 +168,7 @@ Next we will create a rule to allow SSH access from anywhere through that securi
 
 ![Imgur](https://imgur.com/uImm3vy.jpg)
 
-## 6. Lauch an instance into your subnet 
+> ## Lauch an instance into your subnet 
 Next step is to launch an instance into our VPC, specify the public subnet and attach it to the security group we created earlier
 
 to do this, run the command below
@@ -185,7 +188,7 @@ If we Check the management console we will confirm that all cammand ran were cor
 ![Imgur](https://imgur.com/EXf0VVV.jpg)
 
 
-## 7. Clean Up 
+> ## Clean Up 
 now we need to perform cleanup operations 
     
     * terminate instance 

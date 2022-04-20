@@ -23,7 +23,7 @@ https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html
 
 # Notes from Experimenting with this Lab Tasks
 
-## 1. Launch the AWS Management Console
+> ## Launch the AWS Management Console
 Open your browser and navigate to AWS console home. At the top left corner enter keyword "VPC" in the search box and enter into the AWS VPC console
 
 ![Imgur](https://imgur.com/emfHXST.jpg) 
@@ -31,7 +31,7 @@ Open your browser and navigate to AWS console home. At the top left corner enter
 ![Imgur](https://imgur.com/ftz8skr.jpg)
 
 
-## 2. Launch a VPC with one public and one private subnets.
+> ## Launch a VPC with one public and one private subnets.
 Click on "your VPC" and you will be directed into a page where all VPC in your default are displayed then at the top rigth corner click on create VPC
     
 ![Imgur](https://imgur.com/fyzVNuu.jpg) 
@@ -80,7 +80,7 @@ Next is to enable Auto assign IPv4 IP addreses so that resources in our public s
 ![Imgur](https://imgur.com/U1kUhBe.jpg)
 
 
-## 3. Create two route table and associate  each one to each subnets
+> ## Create two route table and associate  each one to each subnets
 Next is to create a route table ansd associate each to our subnets.
 A route table is a vpc resource that determines where traffic is directed/routed to.
 
@@ -108,7 +108,7 @@ You will aslo follow the same steps to associate the route table to our private 
 
 ![Imgur](https://imgur.com/m0n0aDW.jpg)
 
-## 4. Attach an internet gateway to the VPC and a NAT gateway to the private subnet.
+> ##  Attach an internet gateway to the VPC and a NAT gateway to the private subnet.
 
 An internet gateway is a very Important VPC component that allows resources in our public subnets to connect and have access to the internet.
 
@@ -160,7 +160,7 @@ Below are the steps to create a NAT gateway in a public subnet and associate it 
 ![Imgur](https://imgur.com/Y7Fzhv0.jpg)
 
 
-## 5. Lauch a Linux instance into this VPC and attach the subnet
+> ## Lauch a Linux instance into this VPC and attach the subnet
 Now, we will launch  Linux instances into our VPC. we will launch one in our public subnet and another in the  private subnet. 
 
 To launch our EC2 instance in public subnet, we will choose an Amazon Linux 2 AMI, choose a t2.micro instance type, choose default storage, configure a new security group to receive internet traffic (in case of a web server) and SSH traffic inclusive so that we can ssh into the instance to perform administration and other configuration activities in the instance.
@@ -201,7 +201,7 @@ To launch our private instance, we will follow the same pattern but note that in
 ![Imgur](https://imgur.com/oxEScuj.jpg)
 
 
-## 6. Test the network connectivity
+> ##  Test the network connectivity
 Next we will test the network connectivity of our instances
     
 We will start from our public instance. what we will do is to SSH into the instance and attempt to ping a site. We will also apply update on the instance and install apache server and open the test page on our browser through the assigned public IP address/DNS of the instance.
@@ -263,7 +263,7 @@ SSH into the instance from the public subnet, and then perform a ping on the ins
 
 
 
-## 7. Perform clean up actions
+> ## Perform clean up actions
 The Last thing to do is to perfform cleanup operations so thatt we wont be charged for resources we are not using
 
         * Delete the Instances
