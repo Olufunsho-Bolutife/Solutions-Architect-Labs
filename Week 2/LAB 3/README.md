@@ -238,10 +238,7 @@ to terminate the instances running run the commands below
 
     aws ec2 terminate-instances \
     --instance-ids i-0e5172b717a83f689
-
-
-Image
-image
+    
 
 ### To delete security group run the command below
 
