@@ -83,7 +83,7 @@ To do this, we will navigate to the usergroups console and click on create group
  
 ![Imgur](https://imgur.com/C5lQAwk.jpg)
 
-![Imgur](https://imgur.com/nID3dSN)
+![Imgur](https://imgur.com/nID3dSN.jpg)
 
 
  And then our group is created
