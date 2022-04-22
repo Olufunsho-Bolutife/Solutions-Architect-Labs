@@ -16,14 +16,13 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html
 
-# Notes From the LAB Work
+# Notes From the LAB Task
 
 > ## 1. Using your default vpc, find the public subnet
 
-For this Lab, we are going to lanucn an instance in our default vpc and subnet so our first task is to find a public subnet in our default vpc.
+For this Lab, we are going to lanucn an instance in our default VPC and subnet so our first task is to find a public subnet in our default VPC.
 
-To do this, we are going to run the ec2-describe-subnets command. We will specify our default vpc id and the command will list out all subnets available in that vpc
-
+To do this, we are going to run the ec2-describe-subnets command. We will specify our default VPC id and the command will list out all subnets available in that VPC
 
     aws ec2 describe-subnets \
     --filters "Name=vpc-id,Values=vpc-0753daf7540da0384"
@@ -32,7 +31,7 @@ To do this, we are going to run the ec2-describe-subnets command. We will specif
 
 Now all we need to do is to get the subnet ID of one of te subnets and  keep it aside becasue we will launch our ec2 instance into that subnet. Another thing to note is that that subnet must allow resouces launched into it to have a public ip address i.e ("MapPublicIponLaunch" value must be "true")
 
-Subnet ID - subnet-0f7a91856fd5fd11b 
+*Subnet ID - subnet-0f7a91856fd5fd11b*
 
 
 > ## 2. Create a security group
@@ -50,7 +49,7 @@ If the command returns the security group ID as output, then the operation was s
 
 > ## 3. Launch an instance with a web server with termination protection enabled
 
-to do this, we will run the command below and specify the default subnet ID we copied before now, the security group we created just now
+To do this, we will run the command below and specify the default subnet ID we copied before now and the security group we created just now.
 
      aws ec2 run-instances \
     --image-id ami-03ededff12e34e59e \
@@ -62,9 +61,9 @@ to do this, we will run the command below and specify the default subnet ID we c
 
 ![Imgur](https://imgur.com/3gLk8AV.jpg)
 
-Next we will SSH into the instance, apply neccesary updatesand install Apache server since the instance is going to be utilized as a web server.
+Next we will SSH into the instance, apply neccesary updates and install Apache server since the instance is going to be utilized as a web server.
 
-In perevious Labs we have shown how to ssh into our instances. Kindly make reference to previous labs on how to ssh into the instance. Also note that you must have created an inbound rule to allows ssh traffic into the instance, to do that run the command below
+In previous Labs, we have shown how to SSH into our instances. Kindly make reference to previous labs on how to SSH into the instance. Also note that you must have created an inbound rule to allow SSH traffic into the instance. To do that, run the command below
 
     aws ec2 authorize-security-group-ingress \
     --group-id sg-0dc1375667a36313f \
@@ -75,17 +74,17 @@ In perevious Labs we have shown how to ssh into our instances. Kindly make refer
 ![Imgur](https://imgur.com/z3umyl0.jpg)
 
 
-To update all packages run the command below
+To update all packages run the command below,
 
     sudo yum update -y
 
 
-Next, we will install the apache server and to do that, run the command below
+Next, we will install the Apache server and to do that, run the command below
 
     sudo yum install httpd -y
 
 
-Next, we will start the server so that it can begin to run. In addition ot that we will run a command to enable the server to start automatically after a reboot so that we don't have to alwas come to start the server after after every boot.
+Next, we will start the server so that it can begin to run. In addition to that, we will run a command to enable the server to start automatically after a reboot so that we don't have to y come to start the server after every boot.
 
     sudo systemctl start httpd
     sudo systemctl enable httpd
@@ -97,16 +96,16 @@ Next, we will start the server so that it can begin to run. In addition ot that 
 
 ![Imgur](https://imgur.com/fqs6GqQ.jpg)
 
-Next is to test the server through our browser. to do this you copy the public IPv4 address allocated to the instance on launch and then paste in your browser, you should be directed to the apache test page.  This is proof that your web server is up and running and you can now upload your code and run it through the server
+Next is to test the server through our browser. To do this, you copy the public IPv4 address allocated to the instance on launch and then paste in your browser, you should be directed to the apache test page.  This is proof that your web server is up and running and you can now upload your code and run it through the server
 
 ![Imgur](https://imgur.com/f9PdE0n.jpg)
 ![Imgur](https://imgur.com/2nwJ79a.jpg)
 
 > ## 4. Monitor Your EC2 instance; view the types of metrics that are collected for an EC2 instance
 
-Here, we want to monitor some important metric of our instances such as CPU utilization, Totatl bytes in , Total bytes out and may other important metrics which the instance generates for the puprose of monitiring the state and status of the server.
+Here, we want to monitor some important metrics of our instances such as CPU utilization, Network in, Network out and may other important metrics which the instance generates for the puprose of monitiring the state and status of the server.
 
-To do this we will just simply run the ec2 describe instances command 
+To do this, we will just simply run the ec2 describe instances command 
 
     aws ec2 describe-instances \
     --instance-ids i-09c6271dd337c318e
@@ -119,7 +118,7 @@ To do this we will just simply run the ec2 describe instances command
 
 ![Imgur](https://imgur.com/BeOLsJG.jpg)
 
-We can also monitor some of our instance metrics from the mangement console such as CPU utilization, Totatl bytes in , Total bytes out. To do this, Log into the console, navgate to the ec2 console and click on the just created instance and scroll
+We can also monitor some of our instance metrics from the mangement console such as CPU utilization, Network in, Network out etc. To do this, Log into the console, navgate to the ec2 console and click on the just created instance and click on te "monitoring" tab
 
 ![Imgur](https://imgur.com/0YSGReL.jpg)
 
@@ -129,9 +128,9 @@ We can also monitor some of our instance metrics from the mangement console such
 
 > ## 5. Modify the security group that your web server is using to allow HTTP access
 
-We need to do this sp that our server will be able to recive and process incoming http traffic since our web server serves traffic through http protocol
+We need to do this so that our server will be able to receive and process incoming http traffic since our web server serves traffic through the http protocol.
 
-To do thid, we run the command below
+To do this, we run the command below,
 
     aws ec2 authorize-security-group-ingress \
     --group-id sg-0dc1375667a36313f \
@@ -143,31 +142,32 @@ To do thid, we run the command below
 
 > ## 6. Resize your Amazon EC2 instance to scale
 
-Assuming after we launched our instance and we are now recieving traffic from the internet and we realise that the traffic we are recieving is beyond the capacity of the instance, we will have to resize the instance so that it can scale to handle our traffic excellently.
+Assuming after we launched our instance we are now recieving traffic from the internet and we realise that the traffic we are recieving is beyond the capacity of the instance, we will have to resize the instance so that it can scale to handle our traffic excellently.
 
-To do this, first you have to stop the instance, then move on to change the size of the instance.
+To do this, first you have to stop the instance, then move on to change the type of the instance.
 
 To stop the instance, run the command
 
     aws ec2 stop-instances --instance-ids i-09c6271dd337c318e
 
-![Imgur](https://imgur.com/fOPt2IQ.jpg)
 
-Then to resize the instance from a "t2.micro" to a "t2.nano", run the command below
+Then we wil resize the instance from a "t2.micro" to a "t2.nano", using the command below
 
     aws ec2 modify-instance-attribute \
     --instance-id i-09c6271dd337c318e \
     --instance-type "{\"Value\": \"t2.nano\"}"
-If you do not recieve an errror report then you are good to go
 
-![Imgur](https://imgur.com/u5OuRk4.jpg)
+If you do not recieve an error response then you are good to go.
+
+![Imgur](https://imgur.com/fOPt2IQ.jpg)
+
 
 Now, start the instance again and we are set with a new instance type and size.
 
     aws ec2 start-instances \
     --instance-ids i-09c6271dd337c318e
 
-![Imgur](https://imgur.com/BMsFslJ.jpg)
+![Imgur](https://imgur.com/u5OuRk4.jpg)
 
 > ## Lastly, don't forget to perform clean up operations so tha you won't incur unnecessary costs on your free tier account.
 
