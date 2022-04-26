@@ -201,13 +201,14 @@ To confirm that our ALB is up and running, the DNS of the ALB is supposed to tak
 
 Here are screenshots to proof the operation of the ALB
 
-imge1
+![Imgur](https://imgur.com/DOfwNX4.jpg)
 
-image1_
+![Imgur](https://imgur.com/ZaZ11GM.jpg)
 
-image2
 
-image2_1
+![Imgur](https://imgur.com/HFeUhE4.jpg)
+
+![Imgur](https://imgur.com/khvTu3K.jpg)
 
 
 > ##  Create a Network Load Balancer
@@ -366,13 +367,15 @@ To confirm that our NLB is up and running, the DNS of the NLB is supposed to tak
 
 Here are screenshots to proof the operation of the NLB
 
-imge1
+![Imgur](https://imgur.com/uWK0gFl.jpg)
 
-image1_1
+![Imgur](https://imgur.com/Oh54sLh.jpg)
 
-image2
+![Imgur](https://imgur.com/8Gi8QWr.jpg)
 
-IMAGE3
+![Imgur](https://imgur.com/RRR0xYG.jpg)
+
+
 > ##  Create a Classic Load Balancer
 
 Using a Classic Load Balancer instead of an Application Load Balancer has the following benefits:
@@ -451,13 +454,13 @@ To confirm that our CLB is up and running, the DNS of the CLB is supposed to tak
 
 Here are screenshots to proof the operation of the NLB
 
-imge1
+![Imgur](https://imgur.com/4Jo1PoP.jpg)
 
-image2
+![Imgur](https://imgur.com/HbcCqk5.jpg)
 
-image3
+![Imgur](https://imgur.com/XRMf9gg.jpg)
 
-IMAGE4
+![Imgur](https://imgur.com/wnlznmn.jpg)
 
 > ##  Create a Gateway Load Balancer
 
@@ -577,32 +580,36 @@ lastly, Repeat for each application subnet route table in each zone.
 
 > ##  Perform clean up operations
 
-To Delete the Application load balancer and terget group run the command below
+To Delete the Application load balancer and target group run the commands below
 
     aws elbv2 delete-load-balancer \
-    --load-balancer-arn loadbalancer-arn
-    aws elbv2 delete-target-group \
-    --target-group-arn targetgroup-arn
+    --load-balancer-arn arn:aws:elasticloadbalancing:us-east-1:220572702244:loadbalancer/app/my-application-load-balancer/aac5ff8417ec2941
 
-To Delete the Network load balancer and target group run the command below
+
+    aws elbv2 delete-target-group \
+    --target-group-arn arn:aws:elasticloadbalancing:us-east-1:220572702244:targetgroup/my-ALB-targets/e28d13e189d2af50
+
+To Delete the Network load balancer and target group run the commands below
 
     aws elbv2 delete-load-balancer \
-    --load-balancer-arn loadbalancer-arn
+    --load-balancer-arn arn:aws:elasticloadbalancing:us-east-1:220572702244:loadbalancer/net/my-network-load-balancer/d77f22f8721a127c
+
+
     aws elbv2 delete-target-group \
-    --target-group-arn targetgroup-arn
+    --target-group-arn arn:aws:elasticloadbalancing:us-east-1:220572702244:targetgroup/my-NLB-targets/00976f774c2d0e01
 
 
 To Delete the classic load balancer run the command below
 
       aws elb delete-load-balancer \
-      --load-balancer-name my-loadbalancer
+      --load-balancer-name my-classic-loadbalancer
 
 To Delete the gateway load balancer run the command below
 
     aws elbv2 delete-load-balancer \
     --load-balancer-arn loadbalancer-arn
 
-Also do not Forget to delete the route tables, internet gateway, security groups and vpc endpoint connections, subnets and VPC created
+Also do not Forget to delete the Instances, route tables, internet gateway, security groups and vpc endpoint connections, subnets and VPC created
 
 
 >## THANK YOU FOR FOLLOWING
