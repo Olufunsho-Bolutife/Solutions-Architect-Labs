@@ -197,7 +197,7 @@ You should get a JSON response like this
 
 Next is to test the Load balancer. before now we have launched two instances in two different AZ and hosted two different websites on them running on port 80 using the http protocol.
 
-To confirm that our ALB is up and running, the DNS of the ALB is supposed to take us to the two websites in the two instances consecutively when ever we refresh the page.
+To confirm that our ALB is up and running, the DNS of the ALB is supposed to route us to the two websites in the two instances consecutively when ever we refresh the page.
 
 Here are screenshots to proof the operation of the ALB
 
@@ -363,7 +363,7 @@ You should get a JSON response like this
 
 
 
-To confirm that our NLB is up and running, the DNS of the NLB is supposed to take us to the two websites in the previously launched instances consecutively when ever we refresh the page.
+To confirm that our NLB is up and running, the DNS of the NLB is supposed to route us to the two websites in the previously launched instances consecutively when ever we refresh the page.
 
 Here are screenshots to proof the operation of the NLB
 
@@ -450,7 +450,7 @@ you should get a JSON response like this
 After the state of at least one of your instances is InService, you can test your load balancer.
 
 
-To confirm that our CLB is up and running, the DNS of the CLB is supposed to take us to the two websites in the previously launched instances consecutively when ever we refresh the page.
+To confirm that our CLB is up and running, the DNS of the CLB is supposed to route us to the two websites in the previously launched instances consecutively when ever we refresh the page.
 
 Here are screenshots to proof the operation of the NLB
 
