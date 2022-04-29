@@ -347,6 +347,6 @@ Note the endpoint and port for your DB instance. You use this information to con
 * Delete the VPC.
 * Delete the NAT gateway created
 * Release the Elastic IP addresses.
-* Delete te Database iIstance
+* Delete the Database iIstance
 
                 
