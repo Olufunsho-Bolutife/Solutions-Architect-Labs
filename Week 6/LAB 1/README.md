@@ -43,13 +43,13 @@ To enable monitoring of your estimated charges
 
 * In the navigation pane, choose Preferences.
 
-image1
+![Imgur](https://imgur.com/MBuaFYz.jpg)
 
 * Select Receive Billing Alerts.
 
 * Choose Save preferences.
 
-image2
+![Imgur](https://imgur.com/nAsJCSj.jpg)
 
 > ## 2. Create a billing alarm
 
@@ -59,27 +59,36 @@ To create a billing alarm
 
 * In the navigation pane, choose Alarms, Create Alarm.
 
-image3
+![Imgur](https://imgur.com/Lkuv4G4.jpg)
 
 * Choose Select metric, Billing, Total Estimated Charge.
 
-image4
+![Imgur](https://imgur.com/wb9Lohr.jpg)
+
+![Imgur](https://imgur.com/a8NvEXl.jpg)
 
 * Select the checkbox next to EstimatedCharges and choose Select metric
 
-image5
+![Imgur](https://imgur.com/uYLp4hR.jpg)
 
 * For Whenever my total AWS charges for the month exceed, specify the monetary amount (for this LAB, 500) that must be exceeded to trigger the alarm and send an email notification. Then choose Next.
 
-image6
+![Imgur](https://imgur.com/Q2lcFmC.jpg)
+
+![Imgur](https://imgur.com/lbANATr.jpg)
 
 * For send a notification to, choose Create a new topic and then type a name for the new SNS topic and enter the email addresses that are to receive the notifications. Separate the email names with commas.
 
-image7
+![Imgur](https://imgur.com/AIeKbA0.jpg)
+
+* Name the alarm and give description
+
+![Imgur](https://imgur.com/rpOEmve.jpg)
 
 Choose Create Alarm.
 
-image8
+![Imgur](https://imgur.com/X04vfcV.jpg)
+
 > ## 3. Check the alarm status
 
 To check the alarm status
@@ -90,7 +99,7 @@ To check the alarm status
 
 Select the check box next to the alarm. Until the subscription is confirmed, it is shown as "Pending confirmation". After the subscription is confirmed, refresh the console to show the updated status.
 
-image8
+![Imgur](https://imgur.com/X04vfcV)
 
 
 > ## 4. Edit a billing alarm
@@ -106,11 +115,11 @@ To edit a billing alarm
 
 * Select the check box next to the alarm and choose Actions, Modify.
 
-image9
+![Imgur](https://imgur.com/beyOVKa.jpg)
 
 For Whenever my total AWS charges for the month exceed, specify the new amount that must be exceeded to trigger the alarm and send an email notification.
 
-image9_1
+![Imgur](https://imgur.com/FW881jr.jpg)
 
 Choose Save Changes.
 
@@ -126,11 +135,12 @@ To delete a billing alarm
 
 * Select the check box next to the alarm and choose Actions, Delete.
 
-image9_2
+![Imgur](https://imgur.com/dSOR6o8.jpg)
 
 When prompted for confirmation, choose Yes, Delete.
 
 image9_3
+
 
 
 
@@ -217,5 +227,9 @@ image9_9_2
 
 
 >## When done, please do well to perform clean up operations
+
+* Delete the Alarm
+* Delete SNS Topic
+* Delete SNS subscription
 
 >## THANK YOU FOR FOLLOWING
