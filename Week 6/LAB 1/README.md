@@ -139,7 +139,7 @@ To delete a billing alarm
 
 When prompted for confirmation, choose Yes, Delete.
 
-image9_3
+![Imgur](https://imgur.com/gzRGY56.jpg)
 
 
 
@@ -168,23 +168,22 @@ Then move on to create the alarm
 
 * a page like this will open, click on select metric
 
-image9_4
+![Imgur](https://imgur.com/5KNkLHK.jpg)
 
-* Click on EC2 as shown below
+* Click on "*EC2"* and *"per-instance metric"* as shown below
 
-image9_5
+![Imgur](https://imgur.com/GEaqQza.jpg)
+ 
 
-* Click on per-instance metric
-
-image9_6
+![Imgur](https://imgur.com/aOZqyWt.jpg)
 
 * A list will then appear, check for your instannce name and the corresponding metric names to its right, scroll down until you see CPU Utilization, select it and click on select metric
 
-image9_7
+![Imgur](https://imgur.com/lnSaHV8.jpg)
 
 * a page like this will open up and you will see a line graph of the CPU Utilization of the instance over a period of about 5-10 minutes afetr we have stressed the CPU. leave all parameters ad default and scroll down
 
-image9_8
+![Imgur](https://imgur.com/t9kg07S.jpg)
 
 * Next we choose the threshold type and set the threshold configuration. set the *"Threshold type"* to *static* and set the *"whenever CPUutilization is"* as *"greater than"* and *"Threshold"* to *0.65*. the reaso we are working with *0.65* is so that it can be closer to our current COU utilzation for the sake of comparison
 
@@ -192,43 +191,44 @@ image9_9
 
 * Now  note what  happens to the graph when we added a threshold. A red line is drawn over that threshold. So whenever the Blue line (CPUutilization metric) crosses that line, an alarm is triggered.
 
-image9_9_1
+![Imgur](https://imgur.com/bWW7vrY.jpg)
 
 * then click next and a page like this will appear where you set configure notification via sns. leave the *"Alarm state Trigger"* as *"in alarm"*. then you can either selct an existing topic which you have created before or create a new topic and add your email as an endpoint(make sure that you have confirmed your subscription to that topic or Do it after you have created the alarm, this is because SNS will noy send messages to an endpoint except the subscription is confirmed)
 
-image9_9_2
+![Imgur](https://imgur.com/LeY5M0p.jpg)
 
-* leave the *"autoscaling actin"* in its default, then configure *"EC2 action"* to *stop instance* (this ensure that the instance stops whenever the metric exceeds the set threshold)
+* leave the *"autoscaling action"* in its default, then configure *"EC2 action"* to *stop instance* (this ensure that the instance stops whenever the metric exceeds the set threshold)
 
-9_9_3
+![Imgur](https://imgur.com/jO5jGjK.jpg)
 
 * Leave other configurations in their default and click next
 
 * Next, set the alarm name and description
 
-9_9_4
+![Imgur](https://imgur.com/S1ON3g4.jpg)
 
 * then review and create 
 
 * we can see the status of the alarm and the graph of the utilization at the moment
 
-9_9_5
+![Imgur](https://imgur.com/wPH3lkQ.jpg)
 
 * now we will test the operation of the alarm
 
 * we will stress the CPU by refreshing the instance public IP address on our browaer until it reaches the threshold like this
 
 
-9_9_6
+![Imgur](https://imgur.com/q7AuALf.jpg)
 
 * Since we configures an ec2 action to stop the instance once that threshold is crossed, if we navigate to ec2, console, the instance will have been stopped
 
-9_9_7
+![Imgur](https://imgur.com/8mLCVjU.jpg)
 
 
 >## When done, please do well to perform clean up operations
 
 * Delete the Alarm
+* Terminate Ec2 Instance
 * Delete SNS Topic
 * Delete SNS subscription
 
