@@ -149,9 +149,9 @@ When prompted for confirmation, choose Yes, Delete.
 
 
 
-# Next, we want to craete a new alarm for a different metric 
+>## Next, we want to create a new alarm for a different metric 
 
-1. Create a CPU usage alarm based on a static threshold that sends an email
+### Create a CPU usage alarm based on a static threshold that sends an email
 
 in this part, we want to create an alarm with in which the metric to be watched is CPU Usage/utilization. We will set a threshold and configure te alarm to send email notofication when the threshold is breached
 
